@@ -13,7 +13,7 @@ Setup/Maintenance
 Install:
 
     cd
-    git clone --recurse-submodules https://github.com/ggruen/vim.git
+    git clone --recurse-submodules https://github.com/ggruen/vim.git .vim
 
 Update:
 
