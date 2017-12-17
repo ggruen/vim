@@ -13,9 +13,12 @@ set vb
 set incsearch
 
 " syntax highlighting
-"set bg=light
 syntax on
-color default " Use the default theme
+color torte " Use the default theme
+" Setting to light then dark makes vim actually update the colors, otherwise,
+" the colors stay too dark to see on a black background
+set background=light
+set background=dark " Tell vim the screen background is dark
 
 " autoindent
 filetype indent on
