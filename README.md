@@ -23,6 +23,11 @@ Update:
 If you install/remove a plugin, update the appropriate section below to keep
 your sanity.
 
+If you're on a Mac, you may need to install Exuberant ctags (e.g. with
+[Homebrew](https://brew.sh) for ShowFunc to work:
+
+    brew install ctags
+
 Submodules
 ----------
 
