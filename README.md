@@ -10,9 +10,15 @@ kinda belong together.
 Setup/Maintenance
 -----------------
 
-git clone --recurse-submodules `git url`
+Install:
 
-Update submodules: `git submodule update --remote`
+    cd
+    git clone --recurse-submodules https://github.com/ggruen/vim.git
+
+Update:
+
+    git pull
+    git submodule update --remote
 
 If you install/remove a plugin, update the appropriate section below to keep
 your sanity.
