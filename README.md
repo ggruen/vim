@@ -34,12 +34,15 @@ Submodules
 - CtrlP:                https://github.com/ctrlpvim/ctrlp.vim.git
 - Syntastic:            https://github.com/vim-syntastic/syntastic.git
 - VIM Multiple Cursors: https://github.com/terryma/vim-multiple-cursors.git
+- Mustache Handlebars:  https://github.com/mustache/vim-mustache-handlebars.git
 
 Downloads (stored locally in this repo)
 ---------------------------------------
 
 - acp:      http://www.vim.org/scripts/script.php?script_id=1879
 - showfunc: https://vim.sourceforge.io/scripts/script.php?script_id=397
+- pathogen: https://github.com/tpope/vim-pathogen
+    - Used only on pre-vim-8 systems
 
 Notes
 -----

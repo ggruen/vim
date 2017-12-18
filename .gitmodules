@@ -7,3 +7,6 @@
 [submodule "pack/myplugins/start/vim-multiple-cursors"]
 	path = pack/myplugins/start/vim-multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors.git
+[submodule "pack/myplugins/start/vim-mustache-handlebars"]
+	path = pack/myplugins/start/vim-mustache-handlebars
+	url = https://github.com/mustache/vim-mustache-handlebars.git

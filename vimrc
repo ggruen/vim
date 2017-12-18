@@ -14,7 +14,7 @@ set incsearch
 
 " syntax highlighting
 syntax on
-color torte " Use the default theme
+color torte " Use the torte theme
 " Setting to light then dark makes vim actually update the colors, otherwise,
 " the colors stay too dark to see on a black background
 set background=light
@@ -117,12 +117,38 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " Moar tabs!
 set tabpagemax=100
 
-" Syntastic settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" Highlight EOL whitespace
+autocmd FileType * match Error /\s\+$/
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+if v:version < 800
+    " Pathogen package manager (to make vim 7 behave more like vim 8)
+    execute pathogen#infect()
+endif
+
+" Machine specific settings
+
+" get hostname
+let machine = substitute(system('hostname'), "\n", "", "")
+
+" Syntastic causes vim to segfault on these machines
+if machine =~ "[njleng02]"
+    " Syntastic settings
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
+
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
+endif
+
+" Set custom CtrlP paths on perlgem servers
+if machine =~ "[njleng02|njldevdrp07]"
+    " CtrlP - let it find more than 574 files
+    let g:ctrlp_max_files=0
+    " But ignore perlgem dirs we don't care about
+    "let g:ctrlp_user_command = 'find ~/perlgem/configuration ~/perlgem/server/generic ~/perlgem/sites -type f'
+    let g:ctrlp_user_command = 'find %s | egrep "perlgem/(server/generic|configuration/|sites/)"'
+endif
+
